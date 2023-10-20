@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-  transition: tarnsform 0.3s ease;
+  transition: transform 0.3s ease;
 }
  
 /* @layer base {
