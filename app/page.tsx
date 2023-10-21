@@ -123,7 +123,7 @@ export default function Home() {
         {arr.map((e, key) => (
           <div
             key={key}
-            className="group px-[10px] hover:shadow-lg flex flex-col justify-between rounded-[8px] p-2 h-[362px] "
+            className="group px-[10px] hover:shadow-lg border border-[#EFEFEF] flex flex-col justify-between rounded-[8px] p-2 h-[362px] "
           >
             <div>
               <div className="relative">
