@@ -120,7 +120,7 @@ const Footer = () => {
       </div>
       <div className="py-[34.5px] flex justify-between">
         <div className="text-[15px] text-[#5E6774] font-medium dark:text-[white] ">
-          Все права защищены &copy; {currentYear} ОАО "Сабр маркет"
+          Все права защищены &copy; {currentYear} "Сабр маркет"
         </div>
       </div>
     </div>
