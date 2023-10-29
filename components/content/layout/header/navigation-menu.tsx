@@ -30,47 +30,47 @@ const components: {
   {
     img: electronics,
     title: "Электронная и бытовая техника",
-    href: "/docs/primitives/alert-dialog",
+    href: "/tech",
     description: "Наушники и аксессуары",
   },
   {
     img: electronics,
     title: "Электроиструменты",
-    href: "/docs/primitives/hover-card",
+    href: "/tools",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
     img: books,
     title: "Книги",
-    href: "/docs/primitives/progress",
+    href: "/books",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     img: parfume,
     title: "Парфюмерия",
-    href: "/docs/primitives/scroll-area",
+    href: "/parfume",
     description: "Visually or semantically separates content.",
   },
   {
     img: nature,
     title: "Натуральная продукция",
-    href: "/docs/primitives/tabs",
+    href: "/nproducts",
     description:
       "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
   {
     img: nature,
     title: "Мусульманская аттрибутика",
-    href: "/docs/primitives/tooltip",
+    href: "/muslim",
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
   {
     img: clothes,
     title: "Одежда и обувь",
-    href: "/docs/primitives/tooltip",
+    href: "/clothes",
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
@@ -78,7 +78,7 @@ const components: {
 
 export function NavigationMenuDemo() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className=" ">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
@@ -87,11 +87,14 @@ export function NavigationMenuDemo() {
               <h1 className="text-[#3333cc] ">Каталог</h1>
             </div>
           </NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuContent className="bg-[#F8F8F8]">
             <div className=" group-hover:bg-slate-500 ">
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <ul className="grid w-[400px] gap-3  p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                 {components.map((component, key) => (
-                  <div key={key} className="flex ">
+                  <div
+                    key={key}
+                    className="flex  hover:bg-[#d7d4d4] p-[4px] hover:rounded-xl"
+                  >
                     <Image src={component.img} alt="" />
                     <ListItem
                       key={component.title}

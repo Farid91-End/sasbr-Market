@@ -112,56 +112,58 @@ export default function Home() {
     setHeartStates(newHeartStates);
   };
   return (
-    <div className="py-[52px]">
-      <div>
-        <SwiperArea />
-      </div>
-      <div className="popular flex text-[28px] font-bold pt-[48px] w-[170px] ">
-        Популярное <Image src={arrowRight} alt="" className="m-auto " />
-      </div>
-      <div className="grid grid-cols-5 gap-x-[20px] gap-y-[40px] ">
-        {arr.map((e, key) => (
-          <div
-            key={key}
-            className="group px-[10px] hover:shadow-lg border border-[#EFEFEF] flex flex-col justify-between rounded-[8px] p-2 h-[362px] "
-          >
-            <div>
-              <div className="relative">
-                <Image
-                  src={e.img}
-                  alt=""
-                  className="rounded-[8px] group-hover:scale-[1.03] transition-all group-hover:transition-all"
-                />
-                <div className="">
+    <div className=" ">
+      <div className="pb-[52px] pt-3 max-w-[1240px] mx-auto">
+        <div>
+          <SwiperArea />
+        </div>
+        <div className="popular flex text-[28px] font-bold pt-[48px] w-[170px] ">
+          Популярное <Image src={arrowRight} alt="" className="m-auto " />
+        </div>
+        <div className="grid grid-cols-5 gap-x-[20px] gap-y-[40px] ">
+          {arr.map((e, key) => (
+            <div
+              key={key}
+              className="group px-[10px] shadow-lg  flex flex-col justify-between rounded-[8px] p-2 "
+            >
+              <div>
+                <div className="relative rounded-[8px] ">
                   <Image
-                    src={heartStates[key] ? heart2 : heart}
+                    src={e.img}
                     alt=""
-                    className="absolute top-1 right-1 scale-[0.75] cursor-pointer "
-                    onClick={() => toggleHeart(key)}
+                    className="rounded-[8px] group-hover:scale-[1.03] transition-all group-hover:transition-all"
                   />
+                  <div className="">
+                    <Image
+                      src={heartStates[key] ? heart2 : heart}
+                      alt=""
+                      className="absolute top-1 right-1 scale-[0.75] cursor-pointer "
+                      onClick={() => toggleHeart(key)}
+                    />
+                  </div>
+                </div>
+                <h1 className=" text-[12.8px] pt-[12px] line-clamp-2 line-ellipsis">
+                  {e.title}
+                </h1>
+                <div className="flex py-[6px] ">
+                  <Image src={star} alt="" className=" " />
+                  <h1 className="text-[12px] font-light ">{e.vote}</h1>
                 </div>
               </div>
-              <h1 className=" text-[12.8px] pt-[12px] line-clamp-2 line-ellipsis">
-                {e.title}
-              </h1>
-              <div className="flex py-[6px] ">
-                <Image src={star} alt="" className=" " />
-                <h1 className="text-[12px] font-light ">{e.vote}</h1>
+              <div className="flex justify-between  px-2  ">
+                <div className="flex gap-x-[7px] my-auto ">
+                  <h1 className="text-[14px] font-medium">{e.price}₽</h1>
+                  <h1 className="text-[12px] text-[#757575] ">
+                    <s>{e.oldPrice}₽</s>
+                  </h1>
+                </div>
+                <Button className="p-2 rounded-[30px] ">
+                  <Image src={addCart} alt="" className="w-[34px] " />
+                </Button>
               </div>
             </div>
-            <div className="flex justify-between  px-2  ">
-              <div className="flex gap-x-[7px] my-auto ">
-                <h1 className="text-[14px] font-medium">{e.price}₽</h1>
-                <h1 className="text-[12px] text-[#757575] ">
-                  <s>{e.oldPrice}₽</s>
-                </h1>
-              </div>
-              <Button className="p-2 rounded-[30px] ">
-                <Image src={addCart} alt="" className="w-[34px] " />
-              </Button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
